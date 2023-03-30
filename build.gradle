@@ -20,6 +20,7 @@ buildscript {
         kotlin_version = "1.8.0"
         nav_version = "2.5.3"
         room_version = "2.5.1"
+        gradle_version = "7.4.2"
     }
     repositories {
         mavenCentral()
@@ -27,7 +28,7 @@ buildscript {
     }
     dependencies {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-        classpath "com.android.tools.build:gradle:7.3.1"
+        classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
