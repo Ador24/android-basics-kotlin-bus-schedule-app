@@ -27,8 +27,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.databinding.StopScheduleFragmentBinding
 import com.example.busschedule.viewmodels.BusScheduleViewModel
 import com.example.busschedule.viewmodels.BusScheduleViewModelFactory
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class StopScheduleFragment: Fragment() {
@@ -70,12 +69,12 @@ class StopScheduleFragment: Fragment() {
 
         val busStopAdapter = BusStopAdapter({})
         recyclerView.adapter = busStopAdapter
-        GlobalScope.launch(Dispatchers.IO) {
+
             lifecycle.coroutineScope.launch {
                 viewModel.scheduleForStopName(stopName).collect() {
                     busStopAdapter.submitList(it)
                 }
-            }        }
+            }
     }
 
     override fun onDestroyView() {

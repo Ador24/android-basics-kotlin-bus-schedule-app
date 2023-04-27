@@ -2,7 +2,8 @@ package com.example.busschedule.database.schedule
 
 import androidx.room.Dao
 import androidx.room.Query
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
+
 
 @Dao
 interface ScheduleDao {
